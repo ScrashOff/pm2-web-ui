@@ -44,7 +44,8 @@
 ```
 $ git clone git@github.com:alexnzarov/pm2-web-ui.git
 $ cd pm2-web-ui
-$ npm i
+$ set NODE_OPTIONS=--openssl-legacy-provider
+$ npm i --legacy-peer-deps
 ```
 
 > How to configure?
@@ -56,7 +57,7 @@ This application is configured via environment variables, here's the list:
 > How to start the server?
 
 ```
-$ npm run build
+$ npm run build 
 $ npm run start
 ```
 
@@ -64,7 +65,7 @@ $ npm run start
 
 ```
 $ npm run build
-$ pm2 start npm --name "pm2-web-ui" -- start
+$ pm2 start "npm run start" --name UiInterface
 (optional)
 $ pm2 save
 ```
