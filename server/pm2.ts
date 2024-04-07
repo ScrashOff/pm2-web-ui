@@ -52,10 +52,10 @@ export const getLogs = async (pmId) => {
   return response;
 };
 
-export const stopApp = (name) => new Promise((resolve, reject) => pm.stop(name, (err) => err ? reject(err) : resolve()));
+export const stopApp = (name: string): Promise<void> => new Promise<void>((resolve, reject) => pm.stop(name, (err) => err ? reject(err) : resolve()));
 
-export const restartApp = (name) => new Promise((resolve, reject) => pm.restart(name, (err) => err ? reject(err) : resolve()));
+export const restartApp = (name: string): Promise<void> => new Promise<void>((resolve, reject) => pm.restart(name, (err) => err ? reject(err) : resolve()));
 
-export const reloadApp = (name) => new Promise((resolve, reject) => pm.reload(name, (err) => err ? reject(err) : resolve()));
+export const reloadApp = (name: string): Promise<void> => new Promise<void>((resolve, reject) => pm.reload(name, (err) => err ? reject(err) : resolve()));
 
-export const deleteApp = (name) => new Promise((resolve, reject) => pm.delete(name, (err) => err ? reject(err) : resolve()));
+export const deleteApp = (name: string): Promise<void> => new Promise<void>((resolve, reject) => pm.delete(name, (err) => err ? reject(err) : resolve()));
