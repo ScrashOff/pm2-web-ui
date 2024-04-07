@@ -6,8 +6,8 @@ const state = {
   stable: true,
 };
 
-const connect = (noDaemon: boolean = false) => new Promise((resolve, reject) => pm.connect(noDaemon, (err) => err ? reject(err) : resolve()));
-const disconnect = () => new Promise((resolve, reject) => pm.list((err) => err ? reject(err) : resolve()));
+const connect = (noDaemon: boolean = false) => new Promise<void>((resolve, reject) => pm.connect(noDaemon, (err) => err ? reject(err) : resolve()));
+const disconnect = () => new Promise<void>((resolve, reject) => pm.list((err) => err ? reject(err) : resolve()));
 
 export default (fn) => {
   return async (req: IApiRequest, res: IApiResponse) => {
